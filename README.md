@@ -28,5 +28,22 @@ Este repositório contém o projeto da Atividade Continuada (AC) da disciplina d
 3. Adicione os JARs em `/lib` ao build path (clicando com botão direito no projeto → Build Path → Configure Build Path → Add JARs...)
 4. Execute a classe principal (Main)
 
-## 🤝 Dupla
+## 🤝 Equipe
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/AdrianMichael5" title="Acesse o GitHub de Adrian Michael">
+        <img src="https://avatars.githubusercontent.com/u/144910632?v=4" width="100px;" alt="Foto do Adrian Michael"/><br>
+        <sub><b>Adrian Michael</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/william-mjsouza" title="Acesse o GitHub de William Souza">
+        <img src="https://avatars.githubusercontent.com/u/66651052?v=4" width="100px;" alt="Foto do William Souza"/><br>
+        <sub><b>William Souza</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
 
