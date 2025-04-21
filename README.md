@@ -1,6 +1,6 @@
 # AC2025.1 - Sistema de Seguro de Veículos
 
-Este repositório contém o projeto da Atividade Continuada (AC) da disciplina de Programação Orientada a Objetos, desenvolvido em Java puro, sem uso de Maven.
+Este repositório contém o projeto da Atividade Continuada (AC) da disciplina de Programação Orientada a Objetos (POO), desenvolvido em Java puro, sem uso de Maven.
 
 ## 📚 Objetivos
 
@@ -18,3 +18,15 @@ Este repositório contém o projeto da Atividade Continuada (AC) da disciplina d
 - PersistenciaObjetos.jar (fornecido pelo professor)
 
 ## 📁 Estrutura de Pacotes
+
+
+
+## ⚙️ Como rodar
+
+1. Clone este repositório
+2. Importe como projeto Java no Eclipse
+3. Adicione os JARs em `/lib` ao build path (clicando com botão direito no projeto → Build Path → Configure Build Path → Add JARs...)
+4. Execute a classe principal (Main)
+
+## 🤝 Dupla
+
