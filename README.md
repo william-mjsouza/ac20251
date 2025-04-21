@@ -1,2 +1,20 @@
-# ac20251
- Projeto de Atividade Continuada da disciplina de Programação Orientada a Objetos (POO), com foco em modelagem de dados, persistência com arquivos (sem banco de dados), uso de entidades, DAOs, mediators e boas práticas em Java puro (sem Maven).  O projeto simula o funcionamento básico de um sistema de controle de seguros de veículos.
+# AC2025.1 - Sistema de Seguro de Veículos
+
+Este repositório contém o projeto da Atividade Continuada (AC) da disciplina de Programação Orientada a Objetos, desenvolvido em Java puro, sem uso de Maven.
+
+## 📚 Objetivos
+
+- Praticar os conceitos de Programação Orientada a Objetos (POO)
+- Utilizar o padrão de pacotes e organização modular (entidades, daos, mediators, etc)
+- Realizar persistência de dados com arquivos usando o `PersistenciaObjetos.jar`
+- Utilizar a biblioteca Lombok para reduzir boilerplate (get/set/construtores)
+- Simular operações básicas de um sistema de **seguros de veículos**
+
+## 🛠️ Tecnologias
+
+- Java SE 21
+- Eclipse IDE
+- Lombok
+- PersistenciaObjetos.jar (fornecido pelo professor)
+
+## 📁 Estrutura de Pacotes
