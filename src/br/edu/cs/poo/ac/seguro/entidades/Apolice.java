@@ -1,7 +1,7 @@
 package br.edu.cs.poo.ac.seguro.entidades;
 
 import java.math.BigDecimal;
-import lombok.AllArgsConstructor;
+//import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
