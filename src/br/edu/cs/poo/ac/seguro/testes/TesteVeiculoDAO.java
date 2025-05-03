@@ -19,28 +19,28 @@ public class TesteVeiculoDAO extends TesteDAO {
 	@Test
 	public void teste01() {
 		String placa = "00000000";
-		cadastro.incluir(new Veiculo(placa, 2000, null, null, CategoriaVeiculo.BASICO), placa);
+		cadastro.incluir((Serializable)new Veiculo(placa, 2000, null, null, CategoriaVeiculo.BASICO), placa);
 		Veiculo ve = dao.buscar(placa);
 		Assertions.assertNotNull(ve); 
 	}
 	@Test
 	public void teste02() {
 		String placa = "10000000";
-		cadastro.incluir(new Veiculo(placa, 2001, null, null, CategoriaVeiculo.BASICO), placa);
+		cadastro.incluir((Serializable)new Veiculo(placa, 2001, null, null, CategoriaVeiculo.BASICO), placa);
 		Veiculo ve = dao.buscar("11000000");
 		Assertions.assertNull(ve);
 	}
 	@Test
 	public void teste03() {
 		String placa = "20000000";
-		cadastro.incluir(new Veiculo(placa, 2002, null, null, CategoriaVeiculo.BASICO), placa);
+		cadastro.incluir((Serializable)new Veiculo(placa, 2002, null, null, CategoriaVeiculo.BASICO), placa);
 		boolean ret = dao.excluir(placa);
 		Assertions.assertTrue(ret);
 	}
 	@Test
 	public void teste04() {
 		String placa = "30000000";
-		cadastro.incluir(new Veiculo(placa, 2003, null, null, CategoriaVeiculo.BASICO), placa);
+		cadastro.incluir((Serializable)new Veiculo(placa, 2003, null, null, CategoriaVeiculo.BASICO), placa);
 		boolean ret = dao.excluir("31000000");
 		Assertions.assertFalse(ret);
 	}

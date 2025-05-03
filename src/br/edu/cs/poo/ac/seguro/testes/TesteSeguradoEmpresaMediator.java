@@ -125,7 +125,7 @@ public class TesteSeguradoEmpresaMediator extends TesteMediator {
 		String ret = med.incluirSeguradoEmpresa(seg);
 		assertEquals("CNPJ do segurado empresa já existente", ret);
 		SeguradoEmpresa segBuscado = med.buscarSeguradoEmpresa(cnpj);
-		assertTrue(ComparadoraObjetosSerial.compareObjectsSerial(seg, segBuscado));
+		assertTrue(ComparadoraObjetosSerial.compareObjectsSerial((Serializable)seg, (Serializable)segBuscado));
 		assertNotNull(segBuscado);
 	}
 	
@@ -173,7 +173,7 @@ public class TesteSeguradoEmpresaMediator extends TesteMediator {
 		assertEquals(null, ret);
 		SeguradoEmpresa segBuscado = med.buscarSeguradoEmpresa(cnpj);
 		assertNotNull(segBuscado);
-		assertTrue(ComparadoraObjetosSerial.compareObjectsSerial(seg, segBuscado));		
+		assertTrue(ComparadoraObjetosSerial.compareObjectsSerial((Serializable)seg, (Serializable)segBuscado));		
 	}
 	@Test
 	public void test14() {
