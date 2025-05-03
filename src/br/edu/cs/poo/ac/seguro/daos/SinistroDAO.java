@@ -1,5 +1,7 @@
 package br.edu.cs.poo.ac.seguro.daos;
 
+import java.io.Serializable;
+
 import br.edu.cesarschool.next.oo.persistenciaobjetos.CadastroObjetos;
 import br.edu.cs.poo.ac.seguro.entidades.Sinistro;
 
@@ -17,7 +19,7 @@ public class SinistroDAO extends DAOGenerico {
 		if (buscar(sinistro.getNumero()) != null) {
 			return false;
 		} else {
-			cadastro.incluir(sinistro, sinistro.getNumero());
+			cadastro.incluir((Serializable) sinistro, sinistro.getNumero());
 			return true;
 		}
 	}
@@ -26,7 +28,7 @@ public class SinistroDAO extends DAOGenerico {
 		if (buscar(sinistro.getNumero()) == null) {
 			return false;
 		} else {
-			cadastro.alterar(sinistro, sinistro.getNumero());
+			cadastro.alterar((Serializable) sinistro, sinistro.getNumero());
 			return true;
 		}
 	}

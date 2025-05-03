@@ -1,6 +1,8 @@
 package br.edu.cs.poo.ac.seguro.testes;
 
 
+import java.io.Serializable;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -55,7 +57,7 @@ public class TesteVeiculoDAO extends TesteDAO {
 	public void teste06() {
 		String placa = "50000000";		
 		Veiculo ve = new Veiculo(placa, 2005, null, null, CategoriaVeiculo.BASICO);
-		cadastro.incluir(ve, placa);
+		cadastro.incluir((Serializable) ve, placa);
 		boolean ret = dao.incluir(ve);
 		Assertions.assertFalse(ret);
 	}
@@ -72,7 +74,7 @@ public class TesteVeiculoDAO extends TesteDAO {
 	public void teste08() {
 		String placa = "70000000";			
 		Veiculo ve = new Veiculo(placa, 2007, null, null, CategoriaVeiculo.BASICO);
-		cadastro.incluir(ve, placa);
+		cadastro.incluir((Serializable) ve, placa);
 		ve = new Veiculo(placa, 2008, null, null, CategoriaVeiculo.ESPORTIVO);
 		boolean ret = dao.alterar(ve);
 		Assertions.assertTrue(ret);

@@ -1,5 +1,7 @@
 package br.edu.cs.poo.ac.seguro.daos;
 
+import java.io.Serializable;
+
 import br.edu.cesarschool.next.oo.persistenciaobjetos.CadastroObjetos;
 import br.edu.cs.poo.ac.seguro.entidades.SeguradoEmpresa;
 
@@ -18,7 +20,7 @@ public class SeguradoEmpresaDAO extends DAOGenerico {
 			return false;
 		}
 		else {
-			cadastro.incluir(seguradoEmpresa, seguradoEmpresa.getCnpj());
+			cadastro.incluir((Serializable) seguradoEmpresa, seguradoEmpresa.getCnpj());
 			return true;
 		}
 	}
@@ -28,7 +30,7 @@ public class SeguradoEmpresaDAO extends DAOGenerico {
 			return false;
 		}
 		else {
-			cadastro.alterar(seguradoEmpresa, seguradoEmpresa.getCnpj());
+			cadastro.alterar((Serializable) seguradoEmpresa, seguradoEmpresa.getCnpj());
 			return true;
 		}
 	}

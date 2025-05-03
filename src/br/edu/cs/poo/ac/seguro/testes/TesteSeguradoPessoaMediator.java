@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -66,7 +67,7 @@ public class TesteSeguradoPessoaMediator extends TesteMediator {
 				"Recife");
 		SeguradoPessoa seg = new SeguradoPessoa("PAULA", end, LocalDate.now(),
 				BigDecimal.ZERO, cpf, 1000.0);
-		cadastro.incluir(seg, cpf);
+		cadastro.incluir((Serializable) seg, cpf);
 		SeguradoPessoa segBuscado = med.buscarSeguradoPessoa(cpf);
 		assertNotNull(segBuscado); 
 	}
@@ -77,7 +78,7 @@ public class TesteSeguradoPessoaMediator extends TesteMediator {
 				"Recife");
 		SeguradoPessoa seg = new SeguradoPessoa("PAULA", end, LocalDate.now(),
 				BigDecimal.ZERO, cpf, 1000.0);
-		cadastro.incluir(seg, cpf);
+		cadastro.incluir((Serializable) seg, cpf);
 		SeguradoPessoa segBuscado = med.buscarSeguradoPessoa("17255431089");
 		assertNull(segBuscado);
 	}
@@ -126,7 +127,7 @@ public class TesteSeguradoPessoaMediator extends TesteMediator {
 				"Recife");
 		SeguradoPessoa seg = new SeguradoPessoa("PAULA", end, LocalDate.now(),
 				BigDecimal.ZERO, cpf, 1000.0);
-		cadastro.incluir(seg, cpf);
+		cadastro.incluir((Serializable) seg, cpf);
 		String ret = med.incluirSeguradoPessoa(seg);
 		assertEquals("CPF do segurado pessoa já existente", ret);
 		SeguradoPessoa segBuscado = med.buscarSeguradoPessoa(cpf);
@@ -140,7 +141,7 @@ public class TesteSeguradoPessoaMediator extends TesteMediator {
 				"Recife");
 		SeguradoPessoa seg = new SeguradoPessoa(" ", end, LocalDate.now(),
 				BigDecimal.ZERO, "07255431089", 1000.0);
-		cadastro.incluir(seg, seg.getCpf());
+		cadastro.incluir((Serializable) seg, seg.getCpf());
 		String ret = med.alterarSeguradoPessoa(seg);
 		assertEquals("Nome deve ser informado", ret);
 		seg = new SeguradoPessoa("PAULA", null, LocalDate.now(),
@@ -167,7 +168,7 @@ public class TesteSeguradoPessoaMediator extends TesteMediator {
 				"Recife");
 		SeguradoPessoa seg = new SeguradoPessoa("PAULA", end, LocalDate.now(),
 				BigDecimal.ZERO, cpf, 1000.0);
-		cadastro.incluir(seg, cpf);
+		cadastro.incluir((Serializable) seg, cpf);
 		end = new Endereco("B Street", "51000000", "44", "ap 302", "USA", "FL",
 				"Miami"); 
 		seg = new SeguradoPessoa("PAULA 1", end, LocalDate.now(),
@@ -186,7 +187,7 @@ public class TesteSeguradoPessoaMediator extends TesteMediator {
 				"Recife");
 		SeguradoPessoa seg = new SeguradoPessoa("PAULA", end, LocalDate.now(),
 				BigDecimal.ZERO, cpfOri, 1000.0);
-		cadastro.incluir(seg, cpfOri);
+		cadastro.incluir((Serializable) seg, cpfOri);
 		end = new Endereco("B Street", "51000000", "44", "ap 302", "USA", "FL",
 				"Miami"); 
 		seg = new SeguradoPessoa("PAULA 1", end, LocalDate.now(),
@@ -201,7 +202,7 @@ public class TesteSeguradoPessoaMediator extends TesteMediator {
 				"Recife");
 		SeguradoPessoa seg = new SeguradoPessoa("PAULA", end, LocalDate.now(),
 				BigDecimal.ZERO, cpf, 1000.0);
-		cadastro.incluir(seg, cpf);
+		cadastro.incluir((Serializable) seg, cpf);
 		String ret = med.excluirSeguradoPessoa(cpf);
 		assertEquals(null, ret);
 		SeguradoPessoa segBuscado = med.buscarSeguradoPessoa(cpf);
@@ -215,7 +216,7 @@ public class TesteSeguradoPessoaMediator extends TesteMediator {
 				"Recife");
 		SeguradoPessoa seg = new SeguradoPessoa("PAULA", end, LocalDate.now(),
 				BigDecimal.ZERO, cpfOri, 1000.0);
-		cadastro.incluir(seg, cpfOri);
+		cadastro.incluir((Serializable) seg, cpfOri);
 		String ret = med.excluirSeguradoPessoa(cpf);
 		assertEquals("CPF do segurado pessoa não existente", ret);
 		SeguradoPessoa segBuscado = med.buscarSeguradoPessoa(cpfOri);

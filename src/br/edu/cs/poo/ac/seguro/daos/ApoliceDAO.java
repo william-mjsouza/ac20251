@@ -1,5 +1,7 @@
 package br.edu.cs.poo.ac.seguro.daos;
 
+import java.io.Serializable;
+
 import br.edu.cesarschool.next.oo.persistenciaobjetos.CadastroObjetos;
 import br.edu.cs.poo.ac.seguro.entidades.Apolice;
 
@@ -17,7 +19,7 @@ public class ApoliceDAO extends DAOGenerico {
 		if (buscar(apolice.getNumero()) != null) {
 			return false;
 		} else {
-			cadastro.incluir(apolice, apolice.getNumero());
+			cadastro.incluir((Serializable) apolice, apolice.getNumero());
 			return true;
 		}
 	}
@@ -26,7 +28,7 @@ public class ApoliceDAO extends DAOGenerico {
 		if (buscar(apolice.getNumero()) == null) {
 			return false;
 		} else {
-			cadastro.alterar(apolice, apolice.getNumero());
+			cadastro.alterar((Serializable) apolice, apolice.getNumero());
 			return true;
 		}
 	}

@@ -1,7 +1,5 @@
 package br.edu.cs.poo.ac.seguro.testes;
 
-package br.edu.cs.poo.ac.seguro.testes;
-
 import java.io.File;
 
 import org.junit.jupiter.api.BeforeEach;

@@ -1,5 +1,6 @@
 package br.edu.cs.poo.ac.seguro.testes;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -62,7 +63,7 @@ public class TesteSeguradoEmpresaDAO extends TesteDAO {
 		String cnpj = "55000000";
 		SeguradoEmpresa seg = new SeguradoEmpresa("TESTE6", null, LocalDate.now(), BigDecimal.ZERO, 
 				cnpj, 1005.0, false);
-		cadastro.incluir(seg, cnpj);
+		cadastro.incluir((Serializable) seg, cnpj);
 		boolean ret = dao.incluir(seg);
 		Assertions.assertFalse(ret);
 	}
@@ -81,7 +82,7 @@ public class TesteSeguradoEmpresaDAO extends TesteDAO {
 		String cnpj = "77000000";
 		SeguradoEmpresa seg = new SeguradoEmpresa("TESTE8", null, LocalDate.now(), BigDecimal.ZERO, 
 				cnpj, 1007.0, false);
-		cadastro.incluir(seg, cnpj);
+		cadastro.incluir((Serializable) seg, cnpj);
 		seg = new SeguradoEmpresa("TESTE9", null, LocalDate.now(), BigDecimal.ZERO, 
 				cnpj, 1008.0, false);
 		boolean ret = dao.alterar(seg);
