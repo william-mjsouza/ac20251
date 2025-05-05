@@ -21,7 +21,7 @@ import br.edu.cs.poo.ac.seguro.entidades.Veiculo;
 import br.edu.cs.poo.ac.seguro.mediators.ApoliceMediator;
 import br.edu.cs.poo.ac.seguro.mediators.DadosVeiculo;
 import br.edu.cs.poo.ac.seguro.mediators.RetornoInclusaoApolice;
-import br.edu.cs.poo.divisao.RetornoDivisao;
+//import br.edu.cs.poo.divisao.RetornoDivisao;
 
 public class TesteApoliceMediator extends TesteMediator {
 	
@@ -192,12 +192,12 @@ public class TesteApoliceMediator extends TesteMediator {
 		Veiculo velEsp = new Veiculo(placa, ano, null, sp, CategoriaVeiculo.INTERMEDIARIO); 
 		Veiculo vel = (Veiculo)cadVeiculo.buscar(placa);
 		Assertions.assertNotNull(vel);
-		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial(velEsp, vel));
+		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial((Serializable)velEsp, (Serializable)vel));
 		Apolice apEsp = new Apolice(numero, velEsp, new BigDecimal("2223.00"), new BigDecimal("1710.00"), 
 				new BigDecimal("57000.00"), LocalDate.now());  
 		Apolice ap = (Apolice)cadastro.buscar(numero);
 		Assertions.assertNotNull(ap);
-		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial(apEsp, ap));
+		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial((Serializable)apEsp, (Serializable)ap));
 		
 	}
 	@Test
@@ -216,12 +216,12 @@ public class TesteApoliceMediator extends TesteMediator {
 		Veiculo velEsp = new Veiculo(placa, ano, se, null, CategoriaVeiculo.INTERMEDIARIO); 
 		Veiculo vel = (Veiculo)cadVeiculo.buscar(placa);
 		Assertions.assertNotNull(vel);
-		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial(velEsp, vel));
+		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial((Serializable)velEsp, (Serializable)vel));
 		Apolice apEsp = new Apolice(numero, velEsp, new BigDecimal("2223.00"), new BigDecimal("1710.00"), 
 				new BigDecimal("57000.00"), LocalDate.now());  
 		Apolice ap = (Apolice)cadastro.buscar(numero);
 		Assertions.assertNotNull(ap);
-		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial(apEsp, ap));		
+		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial((Serializable)apEsp, (Serializable)ap));		
 	}		
 	@Test
 	public void test013() {
@@ -245,12 +245,12 @@ public class TesteApoliceMediator extends TesteMediator {
 		Veiculo velEsp = new Veiculo(placa, ano, null, spNew, CategoriaVeiculo.INTERMEDIARIO); 
 		Veiculo velAlt = (Veiculo)cadVeiculo.buscar(placa);
 		Assertions.assertNotNull(velAlt);
-		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial(velEsp, velAlt));
+		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial((Serializable)velEsp, (Serializable)velAlt));
 		Apolice apEsp = new Apolice(numero, velEsp, new BigDecimal("2223.00"), 
 				new BigDecimal("1710.00"), new BigDecimal("57000.00"), LocalDate.now());  
 		Apolice ap = (Apolice)cadastro.buscar(numero);
 		Assertions.assertNotNull(ap);
-		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial(apEsp, ap));		
+		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial((Serializable)apEsp, (Serializable)ap));		
 	}
 	@Test
 	public void test014() {
@@ -274,12 +274,12 @@ public class TesteApoliceMediator extends TesteMediator {
 		Veiculo velEsp = new Veiculo(placa, ano, seNew, null, CategoriaVeiculo.INTERMEDIARIO); 
 		Veiculo velAlt = (Veiculo)cadVeiculo.buscar(placa);
 		Assertions.assertNotNull(velAlt);
-		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial(velEsp, velAlt));
+		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial((Serializable)velEsp, (Serializable)velAlt));
 		Apolice apEsp = new Apolice(numero, velEsp, new BigDecimal("2223.00"), 
 				new BigDecimal("1710.00"), new BigDecimal("57000.00"), LocalDate.now());  
 		Apolice ap = (Apolice)cadastro.buscar(numero);
 		Assertions.assertNotNull(ap);
-		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial(apEsp, ap));
+		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial((Serializable)apEsp, (Serializable)ap));
 	}			
 	@Test
 	public void test015() {
@@ -300,12 +300,12 @@ public class TesteApoliceMediator extends TesteMediator {
 		Assertions.assertEquals(numero, ret.getNumeroApolice()); 
 		Veiculo vel = (Veiculo)cadVeiculo.buscar(placa);
 		Assertions.assertNotNull(vel);
-		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial(velEsp, vel));
+		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial((Serializable)velEsp, (Serializable)vel));
 		Apolice apEsp = new Apolice(numero, velEsp, new BigDecimal("2223.00"), 
 				new BigDecimal("1610.00"), new BigDecimal("57000.00"), LocalDate.now());  
 		Apolice ap = (Apolice)cadastro.buscar(numero);
 		Assertions.assertNotNull(ap);
-		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial(apEsp, ap));		
+		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial((Serializable)apEsp, (Serializable)ap));		
 		SeguradoPessoa spBusc = (SeguradoPessoa)cadPessoa.buscar(cpf);
 		Assertions.assertNotNull(spBusc);
 		Assertions.assertEquals(new BigDecimal("1483.00"), spBusc.getBonus());
@@ -329,12 +329,12 @@ public class TesteApoliceMediator extends TesteMediator {
 		Assertions.assertEquals(numero, ret.getNumeroApolice());
 		Veiculo vel = (Veiculo)cadVeiculo.buscar(placa);
 		Assertions.assertNotNull(vel);
-		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial(velEsp, vel));
+		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial((Serializable)velEsp, (Serializable)vel));
 		Apolice apEsp = new Apolice(numero, velEsp, new BigDecimal("2667.60"), 
 				new BigDecimal("1952.00"), new BigDecimal("57000.00"), LocalDate.now());  
 		Apolice ap = (Apolice)cadastro.buscar(numero);
 		Assertions.assertNotNull(ap);
-		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial(apEsp, ap));
+		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial((Serializable)apEsp, (Serializable)ap));
 		SeguradoEmpresa seBusc = (SeguradoEmpresa)cadEmpresa.buscar(cnpj);
 		Assertions.assertNotNull(seBusc);
 		Assertions.assertEquals(new BigDecimal("1585.60"), seBusc.getBonus());		
@@ -358,12 +358,12 @@ public class TesteApoliceMediator extends TesteMediator {
 		Assertions.assertEquals(numero, ret.getNumeroApolice());
 		Veiculo vel = (Veiculo)cadVeiculo.buscar(placa);
 		Assertions.assertNotNull(vel);
-		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial(velEsp, vel));
+		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial((Serializable)velEsp, (Serializable)vel));
 		Apolice apEsp = new Apolice(numero, velEsp, new BigDecimal("2223.00"), 
 				new BigDecimal("1610.00"), new BigDecimal("57000.00"), LocalDate.now());  
 		Apolice ap = (Apolice)cadastro.buscar(numero);
 		Assertions.assertNotNull(ap);
-		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial(apEsp, ap));		
+		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial((Serializable)apEsp, (Serializable)ap));		
 		SeguradoPessoa spBusc = (SeguradoPessoa)cadPessoa.buscar(cpf);
 		Assertions.assertNotNull(spBusc);
 		Assertions.assertEquals(new BigDecimal("1000.00"), spBusc.getBonus());
@@ -387,12 +387,12 @@ public class TesteApoliceMediator extends TesteMediator {
 		Assertions.assertEquals(numero, ret.getNumeroApolice());		 
 		Veiculo vel = (Veiculo)cadVeiculo.buscar(placa);
 		Assertions.assertNotNull(vel);
-		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial(velEsp, vel));
+		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial((Serializable)velEsp, (Serializable)vel));
 		Apolice apEsp = new Apolice(numero, velEsp, new BigDecimal("2667.60"), 
 				new BigDecimal("1952.00"), new BigDecimal("57000.00"), LocalDate.now());  
 		Apolice ap = (Apolice)cadastro.buscar(numero);
 		Assertions.assertNotNull(ap);
-		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial(apEsp, ap));
+		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial((Serializable)apEsp, (Serializable)ap));
 		SeguradoEmpresa seBusc = (SeguradoEmpresa)cadEmpresa.buscar(cnpj);
 		Assertions.assertNotNull(seBusc);
 		Assertions.assertEquals(new BigDecimal("1000.00"), seBusc.getBonus());		
@@ -406,10 +406,10 @@ public class TesteApoliceMediator extends TesteMediator {
 	public void test020() {
 		Apolice apEsp = new Apolice(NUM_AP, null, new BigDecimal("2667.60"), 
 				new BigDecimal("1952.00"), new BigDecimal("57000.00"), LocalDate.now());
-		cadastro.incluir(apEsp, NUM_AP);
+		cadastro.incluir((Serializable) apEsp, NUM_AP);
 		Apolice ap = mediator.buscarApolice(NUM_AP);
 		Assertions.assertNotNull(ap);
-		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial(apEsp, ap));
+		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial((Serializable)apEsp, (Serializable)ap));
 	}	
 	@Test
 	public void test021() {
