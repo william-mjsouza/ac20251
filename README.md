@@ -17,10 +17,6 @@ Este repositório contém o projeto da Atividade Continuada (AC) da disciplina d
 - Lombok
 - PersistenciaObjetos.jar (fornecido pelo professor)
 
-## 📁 Estrutura de Pacotes
-
-
-
 ## ⚙️ Como rodar
 
 1. Clone este repositório
