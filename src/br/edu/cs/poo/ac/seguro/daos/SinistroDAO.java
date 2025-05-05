@@ -41,4 +41,13 @@ public class SinistroDAO extends DAOGenerico {
 			return true;
 		}
 	}
+	
+	public Sinistro[] buscarTodos() {
+        Object[] objs = cadastro.buscarTodos();
+        Sinistro[] result = new Sinistro[objs.length];
+        for (int i = 0; i < objs.length; i++) {
+            result[i] = (Sinistro) objs[i];
+        }
+        return result;
+    }
 }
