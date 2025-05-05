@@ -26,4 +26,13 @@ public enum CategoriaVeiculo {
 	public PrecoAno[] getPrecosAnos() {
 		return precosAnos;
 	}
+	
+	public static CategoriaVeiculo obter(int codigo) {
+        for (CategoriaVeiculo c : values()) {
+            if (c.codigo == codigo) {
+                return c;
+            }
+        }
+        return null;
+    }
 }
