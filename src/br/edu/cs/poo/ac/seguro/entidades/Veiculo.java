@@ -1,15 +1,23 @@
 package br.edu.cs.poo.ac.seguro.entidades;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+import java.io.Serializable;
+
+@Getter
+@Setter
 @AllArgsConstructor
+public class Veiculo implements Serializable, Registro{
 
-public class Veiculo {
-	private String placa;
-	private int ano;
-	private SeguradoEmpresa proprietarioEmpresa;
-	private SeguradoPessoa proprietarioPessoa;
-	private CategoriaVeiculo categoria;
+    private String placa;
+    private int ano;
+    private Segurado proprietario;
+    private CategoriaVeiculo categoria;
+    
+    @Override
+    public String getIdUnico() {
+        return this.getPlaca();
+    }
 }
