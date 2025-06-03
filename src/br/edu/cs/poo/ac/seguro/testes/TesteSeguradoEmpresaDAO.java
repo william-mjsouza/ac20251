@@ -11,7 +11,7 @@ import br.edu.cs.poo.ac.seguro.entidades.SeguradoEmpresa;
 
 public class TesteSeguradoEmpresaDAO extends TesteDAO {
 	private SeguradoEmpresaDAO dao = new SeguradoEmpresaDAO();
-	protected Class<?> getClasse() {
+	protected Class getClasse() {
 		return SeguradoEmpresa.class;
 	}
 	
