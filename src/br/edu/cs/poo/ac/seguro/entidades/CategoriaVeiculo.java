@@ -28,8 +28,8 @@ public enum CategoriaVeiculo {
 	}
 	
 	public static CategoriaVeiculo obter(int codigo) {
-        for (CategoriaVeiculo c : values()) {
-            if (c.codigo == codigo) {
+        for (CategoriaVeiculo c : CategoriaVeiculo.values()) {
+            if (c.getCodigo() == codigo) {
                 return c;
             }
         }
