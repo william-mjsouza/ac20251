@@ -48,16 +48,16 @@ public class SinistroMediator {
         }
 
         if (StringUtils.ehNuloOuBranco(dados.getPlaca())) { 
-            excecao.adicionarMensagem("Placa do Veículo deve ser informada"); 
+            excecao.adicionarMensagem("Placa do Veiculo deve ser informada"); 
         } else {
             veiculo = daoVeiculo.buscar(dados.getPlaca()); 
             if (veiculo == null) {
-                excecao.adicionarMensagem("Veículo não cadastrado"); 
+                excecao.adicionarMensagem("Veiculo não cadastrado"); 
             }
         }
 
         if (StringUtils.ehNuloOuBranco(dados.getUsuarioRegistro())) { 
-            excecao.adicionarMensagem("Usuário do registro de sinistro deve ser informado"); 
+            excecao.adicionarMensagem("Usuario do registro de sinistro deve ser informado"); 
         }
 
         if (dados.getValorSinistro() <= 0) { 
@@ -66,7 +66,7 @@ public class SinistroMediator {
 
         TipoSinistro tipoSinistroSelecionado = TipoSinistro.getTipoSinistro(dados.getCodigoTipoSinistro()); 
         if (tipoSinistroSelecionado == null) {
-            excecao.adicionarMensagem("Código do tipo de sinistro inválido"); 
+            excecao.adicionarMensagem("Codigo do tipo de sinistro invalido"); 
         }
 
         if (excecao.temErros()) {
@@ -96,7 +96,7 @@ public class SinistroMediator {
         }
 
         if (apoliceCobrindo == null) {
-            excecao.adicionarMensagem("Não existe apólice vigente para o veículo"); 
+            excecao.adicionarMensagem("Nao existe apolice vigente para o veiculo"); 
             throw excecao;
         }
         
@@ -104,7 +104,7 @@ public class SinistroMediator {
         BigDecimal valorMaximoSeguradoBd = apoliceCobrindo.getValorMaximoSegurado(); 
 
         if (valorSinistroBd.compareTo(valorMaximoSeguradoBd) > 0) {
-            excecao.adicionarMensagem("Valor do sinistro não pode ultrapassar o valor máximo segurado constante na apólice"); 
+            excecao.adicionarMensagem("Valor do sinistro nao pode ultrapassar o valor maximo segurado constante na apolice"); 
             throw excecao;
         }
 

@@ -18,7 +18,7 @@ import br.edu.cs.poo.ac.seguro.entidades.Sinistro;
 import br.edu.cs.poo.ac.seguro.entidades.TipoSinistro;
 import br.edu.cs.poo.ac.seguro.entidades.Veiculo;
 import br.edu.cs.poo.ac.seguro.mediators.ApoliceMediator;
-import br.edu.cs.poo.ac.seguro.mediators.ApoliceMediator;
+//import br.edu.cs.poo.ac.seguro.mediators.ApoliceMediatorOco;
 import br.edu.cs.poo.ac.seguro.mediators.DadosVeiculo;
 import br.edu.cs.poo.ac.seguro.mediators.RetornoInclusaoApolice;
 //import br.edu.cs.poo.divisao.RetornoDivisao;
@@ -54,14 +54,14 @@ public class TesteApoliceMediator extends TesteMediator {
 			new RetornoInclusaoApolice(null, null);
 		} catch (RuntimeException e) {
 			Assertions.assertEquals(
-					"Número da apólice e mensagem de erro não podem ser ambas nulas",
+					"N�mero da ap�lice e mensagem de erro n�o podem ser ambas nulas",
 					e.getMessage());
 		}
 		try {
 			new RetornoInclusaoApolice("AAA", "VVV");
 		} catch (RuntimeException e) {
 			Assertions.assertEquals(
-					"Número da apólice e mensagem de erro não podem ser ambas preenchidas",
+					"N�mero da ap�lice e mensagem de erro n�o podem ser ambas preenchidas",
 					e.getMessage());
 		}		
 		try {
@@ -78,7 +78,7 @@ public class TesteApoliceMediator extends TesteMediator {
 
 	@Test
 	public void test001() {
-		Assertions.assertEquals("Dados do veículo devem ser informados", 
+		Assertions.assertEquals("Dados do ve�culo devem ser informados", 
 				mediator.incluirApolice(null).getMensagemErro());
 	}
 	@Test
@@ -90,19 +90,19 @@ public class TesteApoliceMediator extends TesteMediator {
 		Assertions.assertEquals("CPF ou CNPJ deve ser informado", 
 				mediator.incluirApolice(dr).getMensagemErro());
 		dr = new DadosVeiculo("07255431088", "KKK0019", 2020, new BigDecimal("60000.0"), 2);		
-		Assertions.assertEquals("CPF inválido", 
+		Assertions.assertEquals("CPF inv�lido", 
 				mediator.incluirApolice(dr).getMensagemErro());
 		dr = new DadosVeiculo("11851715000171", "KKK0019", 2020, new BigDecimal("60000.0"), 2);		
-		Assertions.assertEquals("CNPJ inválido", 
+		Assertions.assertEquals("CNPJ inv�lido", 
 				mediator.incluirApolice(dr).getMensagemErro());
 	}
 	@Test
 	public void test003() {
 		DadosVeiculo dr = new DadosVeiculo("07255431089", null, 2020, new BigDecimal("60000.0"), 2);		
-		Assertions.assertEquals("Placa do veículo deve ser informada", 
+		Assertions.assertEquals("Placa do ve�culo deve ser informada", 
 				mediator.incluirApolice(dr).getMensagemErro());
 		dr = new DadosVeiculo("07255431089", " ", 2020, new BigDecimal("60000.0"), 2);		
-		Assertions.assertEquals("Placa do veículo deve ser informada", 
+		Assertions.assertEquals("Placa do ve�culo deve ser informada", 
 				mediator.incluirApolice(dr).getMensagemErro());		
 	}
 	@Test
@@ -117,19 +117,19 @@ public class TesteApoliceMediator extends TesteMediator {
 	@Test
 	public void test006() {
 		DadosVeiculo dr = new DadosVeiculo("07255431089", "KKK0019", 2020, null, 2);		
-		Assertions.assertEquals("Valor máximo segurado deve ser informado", 
+		Assertions.assertEquals("Valor m�ximo segurado deve ser informado", 
 				mediator.incluirApolice(dr).getMensagemErro());
 		dr = new DadosVeiculo("07255431089", "KKK0019", 2025, new BigDecimal("60002.0"), 2);		
-		Assertions.assertEquals("Valor máximo segurado deve estar entre 75% e 100% do valor do carro encontrado na categoria", 
+		Assertions.assertEquals("Valor m�ximo segurado deve estar entre 75% e 100% do valor do carro encontrado na categoria", 
 				mediator.incluirApolice(dr).getMensagemErro());
 		dr = new DadosVeiculo("07255431089", "KKK0019", 2025, new BigDecimal("43000.0"), 2);		
-		Assertions.assertEquals("Valor máximo segurado deve estar entre 75% e 100% do valor do carro encontrado na categoria", 
+		Assertions.assertEquals("Valor m�ximo segurado deve estar entre 75% e 100% do valor do carro encontrado na categoria", 
 				mediator.incluirApolice(dr).getMensagemErro());		
 	}
 	@Test
 	public void test007() {
 		DadosVeiculo dr = new DadosVeiculo("07255431089", "KKK0019", 2024, new BigDecimal("57000.0"), 10);		
-		Assertions.assertEquals("Categoria inválida",				
+		Assertions.assertEquals("Categoria inv�lida",				
 				mediator.incluirApolice(dr).getMensagemErro());
 	}	
 	@Test
@@ -156,7 +156,7 @@ public class TesteApoliceMediator extends TesteMediator {
 				new BigDecimal("2340.0"), new BigDecimal("60000.0"), LocalDate.now());
 		cadastro.incluir(ap, numero);
 		DadosVeiculo dr = new DadosVeiculo(cpf, placa, ano, new BigDecimal("57000.0"), 2);		
-		Assertions.assertEquals("Apólice já existente para ano atual e veículo",				
+		Assertions.assertEquals("Ap�lice j� existente para ano atual e ve�culo",				
 				mediator.incluirApolice(dr).getMensagemErro());
 	}
 	@Test
@@ -174,7 +174,7 @@ public class TesteApoliceMediator extends TesteMediator {
 				new BigDecimal("2340.00"), new BigDecimal("60000.00"), LocalDate.now());
 		cadastro.incluir(ap, numero);
 		DadosVeiculo dr = new DadosVeiculo(cnpj, placa, ano, new BigDecimal("57000.00"), 2);		
-		Assertions.assertEquals("Apólice já existente para ano atual e veículo",				
+		Assertions.assertEquals("Ap�lice j� existente para ano atual e ve�culo",				
 				mediator.incluirApolice(dr).getMensagemErro());
 	}
 	@Test
@@ -415,11 +415,11 @@ public class TesteApoliceMediator extends TesteMediator {
 	@Test
 	public void test021() {
 		String msg = mediator.excluirApolice(" ");
-		Assertions.assertEquals("Número deve ser informado", msg);
+		Assertions.assertEquals("N�mero deve ser informado", msg);
 		msg = mediator.excluirApolice(null);
-		Assertions.assertEquals("Número deve ser informado", msg);
+		Assertions.assertEquals("N�mero deve ser informado", msg);
 		msg = mediator.excluirApolice(NUM_AP);
-		Assertions.assertEquals("Apólice inexistente", msg);
+		Assertions.assertEquals("Ap�lice inexistente", msg);
 	}
 	@Test
 	public void test022() {
@@ -433,8 +433,8 @@ public class TesteApoliceMediator extends TesteMediator {
 				new BigDecimal("1952.00"), new BigDecimal("57000.00"), now);
 		cadastro.incluir(apEsp, NUM_AP);
 		String msg = mediator.excluirApolice(NUM_AP);
-		Assertions.assertEquals("Existe sinistro cadastrado para o veículo em questão " + 
-				"e no mesmo ano da apólice", msg);
+		Assertions.assertEquals("Existe sinistro cadastrado para o ve�culo em quest�o " + 
+				"e no mesmo ano da ap�lice", msg);
 	}
 	@Test
 	public void test023() {
