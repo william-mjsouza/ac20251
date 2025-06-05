@@ -12,4 +12,9 @@ public class VeiculoDAO extends DAOGenerico<Veiculo> {
     public Class<Veiculo> getClasseEntidade() {
         return Veiculo.class;
     }
+    
+    @Override
+    public Veiculo buscar(String placa) {
+        return super.buscar(placa);
+    }
 }

@@ -14,4 +14,9 @@ public class ApoliceDAO extends DAOGenerico<Apolice> {
     public Class<Apolice> getClasseEntidade() {
         return Apolice.class;
     }
+    
+    @Override
+    public Apolice buscar(String numero) {
+        return super.buscar(numero);
+    }
 }
