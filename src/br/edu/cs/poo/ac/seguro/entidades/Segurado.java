@@ -1,11 +1,11 @@
 package br.edu.cs.poo.ac.seguro.entidades;
 
-import java.io.Serializable;
+//import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Period;
 
-public abstract class Segurado implements Serializable, Registro {
+public abstract class Segurado implements Registro {
 
     /**
 	 * 
@@ -69,6 +69,5 @@ public abstract class Segurado implements Serializable, Registro {
     
     public abstract boolean isEmpresa();
     
-    @Override
     public abstract String getIdUnico();
 }

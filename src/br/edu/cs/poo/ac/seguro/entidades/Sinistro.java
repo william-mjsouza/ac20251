@@ -1,6 +1,5 @@
 package br.edu.cs.poo.ac.seguro.entidades;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -9,7 +8,7 @@ import lombok.AllArgsConstructor;
 
 @Data
 @AllArgsConstructor
-public class Sinistro implements Serializable, Registro {
+public class Sinistro implements Registro {
 	
 	private static final long serialVersionUID = 1L;
 	private String numero;

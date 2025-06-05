@@ -4,14 +4,16 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.io.Serializable;
+//import java.io.Serializable;
 
 @Getter
 @Setter
 @AllArgsConstructor
-public class Veiculo implements Serializable, Registro{
+public class Veiculo implements Registro{
 
-    private String placa;
+	private static final long serialVersionUID = 1L;
+
+	private String placa;
     private int ano;
     private Segurado proprietario;
     private CategoriaVeiculo categoria;
@@ -20,4 +22,6 @@ public class Veiculo implements Serializable, Registro{
     public String getIdUnico() {
         return this.getPlaca();
     }
+    
+    
 }
