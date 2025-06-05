@@ -2,7 +2,7 @@ package br.edu.cs.poo.ac.seguro.daos;
 
 import br.edu.cs.poo.ac.seguro.entidades.SeguradoPessoa;
 
-public class SeguradoPessoaDAO extends DAOGenerico<SeguradoPessoa> {
+public class SeguradoPessoaDAO extends SeguradoDAO<SeguradoPessoa> {
 
 	@Override
     public Class<SeguradoPessoa> getClasseEntidade() {
@@ -10,7 +10,7 @@ public class SeguradoPessoaDAO extends DAOGenerico<SeguradoPessoa> {
     }
 	
 	@Override
-    public SeguradoPessoa buscar(String id) {
-        return (SeguradoPessoa) super.buscar(id);
+    public SeguradoPessoa buscar(String numero) {
+        return (SeguradoPessoa) super.buscar(numero);
     }
 }
